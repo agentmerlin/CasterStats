@@ -1,0 +1,6 @@
+## Interface: 11200
+## Title: [|cff3fcf26K|r] CasterStats-2
+## Notes: Adds information about stats relevant to casters to the character screen.
+## Dependencies: BonusScanner
+## SavedVariablesPerCharacter: reportThis
+CasterStats.xml
