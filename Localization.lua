@@ -22,6 +22,7 @@ if ( GetLocale() == "enUS" ) then
 		SPELLTOHIT = "Chance to Hit with Spells",
 		HEALTHREG = "Health Regen",
 		MANAREG = "Mana Regen",
+		SPELLPEN = "Spell Penetration",
 		NEGRES = "Target Resist Decrease"
 	};
 
@@ -55,7 +56,8 @@ elseif ( GetLocale() == "deDE" ) then
 		HOLYCRIT = "Heilig Krit.",
 		SPELLTOHIT = "Chance mit Zaubern zu treffen",
 		HEALTHREG = "Gesundheitsregenaration",
-		MANAREG = "Mana Regeneration",	
+		MANAREG = "Mana Regeneration",
+		SPELLPEN = "Spell Penetration", --English
 		NEGRES = "Target Resist Decrease" --English
 	};
 
@@ -78,7 +80,7 @@ elseif ( GetLocale() == "frFR" ) then
 	--Stat names
 	CS_STAT_NAMES = {
 		HEAL = "Soin",
-		DMG = "D\195\169g\195\162ts des sorts",	
+		DMG = "D\195\169g\195\162ts des sorts",
 		ARCANEDMG = "D\195\169g\195\162ts d'Arcanes",
 		FIREDMG = "D\195\169g\195\162ts de Feu",
 		FROSTDMG = "D\195\169g\195\162ts de Froid",
@@ -90,6 +92,7 @@ elseif ( GetLocale() == "frFR" ) then
 		SPELLTOHIT = "Chances de toucher avec les sorts",
 		HEALTHGEN = "R\195\169generation Vie",
 		MANAGEN = "R\195\169generation Mana",
+		SPELLPEN = "Spell Penetration", --English
 		NEGRES = "Target Resist Decrease" --English
 	};
 

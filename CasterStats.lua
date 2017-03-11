@@ -1,27 +1,27 @@
 ---------------------------------------------------
--- Caster Stats v0.9.5.1 by RMS 
+-- Caster Stats v0.9.5.1 by RMS
 ---------------------------------------------------
 --[[
 
 Adds a line to the stat section of the character frame below armor. This line can be
-set to either show your total "+Spell Damage" or "+Healing" via the command line. 
-Like the other stats in the character screen it provides more information when you 
-mouse over it. The tooltip will display the totals for plus healing, spell damage, 
+set to either show your total "+Spell Damage" or "+Healing" via the command line.
+Like the other stats in the character screen it provides more information when you
+mouse over it. The tooltip will display the totals for plus healing, spell damage,
 all individual schools of damage, spell crit, spell to hit, mana regen etc...
 
-The information that is displayed is only additional stats provided by your gear. 
-If you do not have any of the the listed stats it will not be visible. Caster Stats 
-does not currently calculate crit, or mana regen from stats like int, spirit, or 
-base crit. It is only mean't to be a quick way of finding the bonuses you are 
+The information that is displayed is only additional stats provided by your gear.
+If you do not have any of the the listed stats it will not be visible. Caster Stats
+does not currently calculate crit, or mana regen from stats like int, spirit, or
+base crit. It is only mean't to be a quick way of finding the bonuses you are
 getting from your gear. I may implement more features in the future however.
 
-While there are other mods out there that can total these stats for you, I wanted 
-something that was more intune with the melee character stats. Something simple 
+While there are other mods out there that can total these stats for you, I wanted
+something that was more intune with the melee character stats. Something simple
 yet informative.
 
 -Config
 "/cstats" - Slash command for Caster Stats
-"/cstats [damagetype]" - Allows you to choose the stat visible in the character screen. "damage" or "healing". 
+"/cstats [damagetype]" - Allows you to choose the stat visible in the character screen. "damage" or "healing".
 
 -------------------------------------------------------------------------------------
 v0.9.5.1
@@ -54,14 +54,14 @@ v0.9.1
 -- Fixed issues with +spell crit and +spell hit not showing under certain conditions.
 -- Fixed issues where values weren't getting reset on rescan.
 
-]]-- 
+]]--
 
 reportThis = 0;
 
 local casterStats = {
 	stats = {};
 	statTypes = {
-		'HEAL',		-- healing 
+		'HEAL',		-- healing
 		'DMG',		-- spell damage
 		'ARCANEDMG',	-- arcane spell damage
 		'FIREDMG',	-- fire spell damage
@@ -74,13 +74,14 @@ local casterStats = {
 		'HEALTHREG',	-- health regeneration per 5 sec.
 		'MANAREG',	-- mana regeneration per 5 sec.
 		'SPELLTOHIT',	-- spell chance to hit
+        'SPELLPEN',     -- spell penetration
 		'NEGRES'		-- target resist decrease
 	};
 };
 
 function CS_OnLoad()
 	-- Register the command prompt command
-	SLASH_CSTATS1 = "/cstats";	
+	SLASH_CSTATS1 = "/cstats";
 	SlashCmdList["CSTATS"] = CS_CommandHandler;
 
 	-- Add negative resist functionality to BONUS SCANNER
@@ -93,7 +94,7 @@ end
 
 
 -- Rescan the inventory
-function UpdateCS() 
+function UpdateCS()
 	local class;
 	_, class = UnitClass("player");
 
@@ -210,5 +211,3 @@ function CS_CommandHandler( msg )
 		DEFAULT_CHAT_FRAME:AddMessage("\"/cstats ["..CS_STAT.."]\"  -\""..CS_DMG_TOGGLE.."\", \""..CS_HEALING_TOGGLE.."\"");
 	end
 end
-
-
